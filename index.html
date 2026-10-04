@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="main-header">
+        <div class="brand-block">
+          <div class="brand-mark">S</div>
+          <div>
+            <span class="brand-tag">Academic Office</span>
+            <h2>Student Services</h2>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#">Overview</a>
+          <a href="#">Admissions</a>
+          <a href="#">Students</a>
+          <a href="#">Reports</a>
+          <a href="#">Support</a>
+        </nav>
+      </header>
+
+      <div class="app-container">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Dashboard</p>
+            <h1>Student Management System</h1>
+          </div>
+
+          <div class="student-count-box" aria-live="polite">
+            <span>Total Students</span>
+            <strong id="studentCount">0</strong>
+          </div>
+        </header>
+
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+
+        <main class="content">
+          <section class="card form-card">
+            <h2 id="formTitle">Add Student</h2>
+
+            <form id="studentForm" novalidate>
+              <div class="form-grid">
+                <div class="field-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Enter full name" />
+                  <small class="error-message" data-error-for="name"></small>
+                </div>
+
+                <div class="field-group">
+                  <label for="studentId">Student ID</label>
+                  <input type="text" id="studentId" name="studentId" placeholder="e.g. STU-101" />
+                  <small class="error-message" data-error-for="studentId"></small>
+                </div>
+
+                <div class="field-group">
+                  <label for="age">Age</label>
+                  <input type="number" id="age" name="age" min="1" max="120" placeholder="Enter age" />
+                  <small class="error-message" data-error-for="age"></small>
+                </div>
+
+                <div class="field-group">
+                  <label for="department">Department</label>
+                  <input type="text" id="department" name="department" placeholder="Enter department" />
+                  <small class="error-message" data-error-for="department"></small>
+                </div>
+
+                <div class="field-group full-width">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="Enter email address" />
+                  <small class="error-message" data-error-for="email"></small>
+                </div>
+              </div>
+
+              <div class="actions-row">
+                <button type="submit" id="submitBtn" class="primary-btn">Add Student</button>
+                <button type="button" id="cancelEditBtn" class="secondary-btn hidden">Cancel</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="card table-card">
+            <div class="search-row">
+              <div class="search-wrap">
+                <label for="searchInput">Search Students</label>
+                <input
+                  type="search"
+                  id="searchInput"
+                  placeholder="Search by name, ID, or department"
+                />
+              </div>
+            </div>
+
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Student ID</th>
+                    <th>Age</th>
+                    <th>Department</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="studentTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <footer class="site-footer">
+        <div>
+          <strong>Student Records Office</strong>
+          <span>Confidential academic administration</span>
+        </div>
+        <p>All rights reserved</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
